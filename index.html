@@ -1117,6 +1117,76 @@
     font-size: 14px;
     font-weight: 700;
   }
+  .rollout-card {
+    background: linear-gradient(135deg, var(--orange-soft) 0%, #FFF8EE 100%);
+    border: 1px solid rgba(247, 136, 12, 0.2);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-top: 16px;
+  }
+  .rollout-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+    margin-bottom: 8px;
+  }
+  .rollout-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .rollout-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .rollout-card p:last-child { margin-bottom: 0; }
+  .rollout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 700px) {
+    .rollout-grid { grid-template-columns: 1fr; }
+  }
+  .rollout-block {
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .rollout-block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+    margin-bottom: 10px;
+  }
+  .rollout-block ul {
+    list-style: none;
+  }
+  .rollout-block li {
+    padding: 5px 0 5px 18px;
+    position: relative;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .rollout-block li::before {
+    content: "\2192";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 11px;
+  }
   @media (max-width: 700px) {
     .dash-today-greeting { max-width: 100%; margin-bottom: 14px; }
     .dash-today-avail {
@@ -2000,6 +2070,38 @@
           <li><strong>Linked policy page.</strong> "View full policy" opens a dedicated, bookmarkable page with the complete terms. Searchable, shareable, screenshotable. No buried information, no disputes possible.</li>
           <li><strong>Stops the "I didn't know" problem cold.</strong> When someone hits Day 14 and asks "what now?", the answer has been in their face for two weeks. Reduces support tickets, prevents disputes, builds trust.</li>
         </ul>
+      </div>
+
+      <div class="rollout-card">
+        <div class="rollout-eyebrow">Rollout to current HappyTaskers</div>
+        <h3>How we add this for the existing cohort</h3>
+        <p>Current HappyTaskers who signed up before this update get auto-enrolled the moment the widget goes live. Their countdown starts fresh at <strong>Day 1 of 14</strong>, giving them a real shot at the promise even though they've been on the platform without bookings.</p>
+
+        <div class="rollout-grid">
+          <div class="rollout-block">
+            <div class="rollout-block-label">Communication plan</div>
+            <ul>
+              <li>Email everyone with the program announcement and what changed</li>
+              <li>Personal text from Zandr 24 hours after the email</li>
+              <li>Phone call to anyone who hasn't engaged within 3 days</li>
+              <li>Frame: "We improved the platform. You're automatically in. Here's what to do next."</li>
+            </ul>
+          </div>
+
+          <div class="rollout-block">
+            <div class="rollout-block-label">Refund amount logic</div>
+            <ul>
+              <li>Widget displays the actual amount each HappyTasker paid to join</li>
+              <li>Early adopters who paid $9 see "claim your $9 back"</li>
+              <li>New signups paying $49 see "claim your $49 back"</li>
+              <li>Refund is pulled from each user's actual transaction record</li>
+            </ul>
+          </div>
+        </div>
+
+        <p><strong>Why match the amount paid:</strong> Fair, accurate accounting. We refund what we actually collected, not more. Early adopters paid less because they took a chance early, and they've already had the benefit of cheaper entry. A refund matching their actual payment is honest, defensible, and avoids setting a precedent that refunds aren't tied to what was paid. The platform value they had during their time on the platform isn't being taken away. The refund is just for the future window.</p>
+
+        <p><strong>What we tell them:</strong> "We added the First Booking Promise to every HappyTasker dashboard. You're automatically in. Your 14-day window starts now, fresh. Check your dashboard to see where you stand and what to do next. If we don't get you booked in 14 days, you have a choice: claim your sign-up payment back and exit, or pass on the refund and stay on the platform to keep building."</p>
       </div>
     </div>
   </section>
