@@ -675,6 +675,464 @@
     font-weight: 700;
   }
 
+  /* Dashboard widget mockup */
+  .dashboard-mockup-wrap {
+    margin-top: 18px;
+  }
+  .dashboard-mockup-caption {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .dash-mock {
+    max-width: 760px;
+    margin: 0 auto 20px auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+    overflow: hidden;
+  }
+  .dash-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+    gap: 12px;
+  }
+  .dash-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+  .dash-logo-mark {
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #FFC78A, #F7880C);
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .dash-logo .happy { color: var(--orange); }
+  .dash-logo .task { color: var(--ink); }
+  .dash-nav-items {
+    display: flex;
+    gap: 22px;
+  }
+  .dash-nav-item {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    padding-bottom: 4px;
+  }
+  .dash-nav-item.active {
+    color: var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .dash-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .dash-nav-bell {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: relative;
+  }
+  .dash-nav-bell::after {
+    content: "1";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 13px;
+    height: 13px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+  .dash-nav-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #F9A93C, #C66A00);
+  }
+  .dash-content {
+    padding: 20px 24px 24px 24px;
+    background: var(--bg);
+  }
+  .dash-toggle {
+    display: flex;
+    background: rgba(0,0,0,0.05);
+    border-radius: 999px;
+    padding: 4px;
+    width: fit-content;
+    margin: 0 auto 18px auto;
+    gap: 2px;
+  }
+  .dash-toggle-item {
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .dash-toggle-item.active {
+    background: var(--ink);
+    color: #fff;
+  }
+  .dash-toggle-item.inactive {
+    color: var(--ink-soft);
+  }
+  .dash-live-banner {
+    background: var(--green-soft);
+    border: 1px solid rgba(30, 138, 79, 0.2);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .dash-live-check {
+    width: 26px;
+    height: 26px;
+    background: rgba(30, 138, 79, 0.18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-deep);
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+  .dash-live-text {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .dash-live-text strong {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: 700;
+  }
+  .dash-live-text .sub {
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+  .dash-today {
+    background: linear-gradient(135deg, #F7880C 0%, #FFB066 100%);
+    border-radius: 16px;
+    padding: 24px 28px;
+    color: #fff;
+    margin-bottom: 16px;
+    position: relative;
+    min-height: 170px;
+    overflow: hidden;
+  }
+  .dash-today h3 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .dash-today-date {
+    font-size: 11px;
+    opacity: 0.9;
+    margin-bottom: 22px;
+  }
+  .dash-today-greeting {
+    font-size: 13px;
+    margin-bottom: 0;
+    max-width: 55%;
+    line-height: 1.5;
+  }
+  .dash-today-avail {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    color: var(--ink);
+    width: 220px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .dash-today-avail-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .dash-today-avail-time {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .dash-today-avail-time .open-tag {
+    font-size: 9px;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+  }
+  .dash-today-avail-btn {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 11px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .dash-promise {
+    background: #fff;
+    border: 2px solid var(--orange);
+    border-radius: 14px;
+    padding: 18px 20px 16px 20px;
+    margin-bottom: 16px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(247, 136, 12, 0.12);
+  }
+  .dash-promise-badge {
+    position: absolute;
+    top: -10px;
+    right: 18px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .dash-promise-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .dash-promise-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .dash-promise-icon-wrap {
+    width: 26px;
+    height: 26px;
+    background: var(--orange-soft);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-deep);
+    font-size: 13px;
+  }
+  .dash-promise-day {
+    background: var(--orange-soft);
+    color: var(--orange-deep);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .dash-promise-status {
+    font-size: 13px;
+    color: var(--green-deep);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dash-promise-status .check {
+    width: 16px;
+    height: 16px;
+    background: var(--green-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: var(--green-deep);
+  }
+  .dash-promise-text {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .dash-promise-progress-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .dash-promise-progress {
+    height: 8px;
+    background: var(--bg);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .dash-promise-progress-fill {
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--orange) 0%, #FFB066 100%);
+    border-radius: 999px;
+  }
+  .dash-promise-deadline {
+    font-size: 11px;
+    color: var(--gray);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .dash-promise-link {
+    font-size: 12px;
+    color: var(--orange-deep);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .dash-stats {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .dash-stats-label {
+    font-size: 10px;
+    color: var(--gray);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .dash-stats-link {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .dash-stats-numbers {
+    display: flex;
+    gap: 26px;
+  }
+  .dash-stats-num-block {
+    text-align: center;
+  }
+  .dash-stats-num {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .dash-stats-num-label {
+    font-size: 10px;
+    color: var(--gray);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+  .dashboard-reasoning {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 26px;
+  }
+  .dashboard-reasoning-header {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+    margin-bottom: 6px;
+  }
+  .dashboard-reasoning-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+  .dashboard-reasoning ul {
+    list-style: none;
+  }
+  .dashboard-reasoning li {
+    padding: 12px 0 12px 24px;
+    position: relative;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--line);
+  }
+  .dashboard-reasoning li:last-child { border-bottom: 0; }
+  .dashboard-reasoning li::before {
+    content: "\2192";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: var(--orange);
+    font-weight: 700;
+  }
+  .dashboard-reasoning li strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) {
+    .dash-today-greeting { max-width: 100%; margin-bottom: 14px; }
+    .dash-today-avail {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 14px;
+    }
+    .dash-stats {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .dash-nav-items {
+      display: none;
+    }
+  }
+
   /* Referral ladder */
   .ladder {
     display: grid;
@@ -1424,6 +1882,122 @@
           <li><strong>Shifts mindset from "I bought access" to "I'm starting a 14-day sprint."</strong> Pay alone doesn't create commitment. A clear timeline does. Tasks framed as "your next 14 days" are way more activating than "your account is ready."</li>
           <li><strong>Makes the Day 7 deadline land as fair.</strong> By tying it to the operational logic ("we need at least 7 days to drive bookings your way") instead of presenting it as an arbitrary rule, it reads as us being honest about what makes the platform work.</li>
           <li><strong>Reduces purchase regret.</strong> "No questions, no friction. Walk away with our blessing" telegraphs integrity right after they spent $49. This single line probably saves us 10 to 20 percent of cancellation pressure in the first 24 hours.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD WIDGET MOCKUP -->
+  <section>
+    <div class="section-eyebrow">Where the First Booking Promise lives in the dashboard</div>
+    <h2>Persistent visibility, no surprises.</h2>
+    <div class="dashboard-mockup-wrap">
+      <p class="dashboard-mockup-caption">Mockup of the HappyTasker dashboard with the proposed First Booking Promise widget in place (highlighted in orange)</p>
+
+      <div class="dash-mock">
+        <!-- Top nav -->
+        <div class="dash-nav">
+          <div class="dash-logo">
+            <span class="dash-logo-mark">&#128057;</span>
+            <span><span class="happy">Happy</span><span class="task">Task</span></span>
+          </div>
+          <div class="dash-nav-items">
+            <span class="dash-nav-item active">Today</span>
+            <span class="dash-nav-item">Inbox</span>
+            <span class="dash-nav-item">Tasks</span>
+            <span class="dash-nav-item">Tools</span>
+          </div>
+          <div class="dash-nav-right">
+            <span class="dash-nav-bell">&#128276;</span>
+            <span class="dash-nav-avatar"></span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="dash-content">
+          <!-- Business / Classroom toggle -->
+          <div class="dash-toggle">
+            <span class="dash-toggle-item active">Business</span>
+            <span class="dash-toggle-item inactive">Classroom</span>
+          </div>
+
+          <!-- Live banner -->
+          <div class="dash-live-banner">
+            <span class="dash-live-check">&#10003;</span>
+            <div class="dash-live-text">
+              <strong>Your business is live on HappyTask.</strong>
+              <span class="sub">Clients can find and book you in the search results.</span>
+            </div>
+          </div>
+
+          <!-- Today hero -->
+          <div class="dash-today">
+            <h3>Today</h3>
+            <div class="dash-today-date">Monday, May 25</div>
+            <div class="dash-today-greeting">Hey, Julia! Here's what your day looks like.</div>
+            <div class="dash-today-avail">
+              <div class="dash-today-avail-label">&#128197; Available for hire today</div>
+              <div class="dash-today-avail-time">
+                <span>5:00 AM &ndash; 5:00 PM</span>
+                <span class="open-tag">OPEN</span>
+              </div>
+              <div class="dash-today-avail-btn">&#8645; Fine-tune availability</div>
+            </div>
+          </div>
+
+          <!-- THE PROMISE WIDGET (highlighted) -->
+          <div class="dash-promise">
+            <span class="dash-promise-badge">NEW WIDGET</span>
+            <div class="dash-promise-header">
+              <div class="dash-promise-title">
+                <span class="dash-promise-icon-wrap">&#128203;</span>
+                First Booking Promise
+              </div>
+              <span class="dash-promise-day">Day 5 of 14</span>
+            </div>
+            <div class="dash-promise-status">
+              <span class="check">&#10003;</span> Team-approved. You're live in search.
+            </div>
+            <div class="dash-promise-text">
+              If you aren't booked by Day 14, you have a choice: claim your $49 back and exit, or pass and stay on the platform to keep building.
+            </div>
+            <div class="dash-promise-progress-label">Progress to Day 14</div>
+            <div class="dash-promise-progress">
+              <div class="dash-promise-progress-fill"></div>
+            </div>
+            <div class="dash-promise-deadline">Day 14: June 7</div>
+            <a class="dash-promise-link">View full policy &rarr;</a>
+          </div>
+
+          <!-- Business stats -->
+          <div class="dash-stats">
+            <div>
+              <div class="dash-stats-label">YOUR BUSINESS LINK</div>
+              <div class="dash-stats-link">happytask.com/juliaw &#9662;</div>
+            </div>
+            <div class="dash-stats-numbers">
+              <div class="dash-stats-num-block">
+                <div class="dash-stats-num">0</div>
+                <div class="dash-stats-num-label">VIEWS</div>
+              </div>
+              <div class="dash-stats-num-block">
+                <div class="dash-stats-num">0</div>
+                <div class="dash-stats-num-label">HIRES</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-reasoning">
+        <div class="dashboard-reasoning-header">Why this placement works</div>
+        <p class="dashboard-reasoning-sub">The widget sits between the orange "Today" hero (the daily anchor) and the business link stats card (performance). That position is above the fold, doesn't compete with the daily hero, and thematically pairs with the stats card below. Reading order becomes a natural progression: today &rarr; journey &rarr; performance.</p>
+        <ul>
+          <li><strong>Persistent access, no surprises.</strong> Unlike the welcome popup that closes after first sight, this widget lives in the dashboard for the full 14-day window. They can re-read the policy any time, screenshot it, send it to themselves. Nothing buried.</li>
+          <li><strong>Always shows where they are in the journey.</strong> The "Day 5 of 14" counter and progress bar mean they always know how much time they have left without doing math. Creates soft urgency without us nagging.</li>
+          <li><strong>Adaptive states for each phase.</strong> Pre-approval: shows the 6 requirements progress (e.g., "4 of 6 done"). Post-approval: shows the discovery countdown. Day 14 exactly: becomes the choice screen with two buttons (refund + exit, or pass + stay). After Day 14 or once booked: the widget retires from the dashboard, slot can hold an "Insights" card instead.</li>
+          <li><strong>Linked policy page.</strong> "View full policy" opens a dedicated, bookmarkable page with the complete terms. Searchable, shareable, screenshotable. No buried information, no disputes possible.</li>
+          <li><strong>Stops the "I didn't know" problem cold.</strong> When someone hits Day 14 and asks "what now?", the answer has been in their face for two weeks. Reduces support tickets, prevents disputes, builds trust.</li>
         </ul>
       </div>
     </div>
