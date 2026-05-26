@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HappyTask Vegas Launch: The Open Entrepreneur Platform</title>
+<style>
+  :root {
+    --orange: #F7880C;
+    --orange-soft: #FFF1DD;
+    --orange-deep: #C66A00;
+    --ink: #1A1A1A;
+    --ink-soft: #4A4A4A;
+    --gray: #8A8A8A;
+    --line: #E8E5E0;
+    --bg: #FAF8F5;
+    --card: #FFFFFF;
+    --green: #1E8A4F;
+    --green-soft: #E6F4EC;
+    --green-deep: #136638;
+    --red: #B8312F;
+    --red-soft: #FBEAEA;
+    --blue: #2563EB;
+    --blue-soft: #E8F0FE;
+    --blue-deep: #1E40AF;
+    --gold: #D4A017;
+    --gold-soft: #FAF1D5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  /* Section spacing */
+  section { margin-bottom: 32px; }
+
+  /* Hero */
+  header.hero {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2A1A0A 100%);
+    color: #fff;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(247,136,12,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .hero h1 .accent { color: var(--orange); }
+  .hero p {
+    color: #DADADA;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 760px;
+    position: relative;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 26px;
+    position: relative;
+  }
+  @media (max-width: 700px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    header.hero { padding: 36px 24px; }
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #BBB;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .hero-stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: -0.01em;
+  }
+
+  /* Section headers */
+  .section-eyebrow {
+    color: var(--orange-deep);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  /* Generic card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .card p { color: var(--ink-soft); margin-bottom: 12px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card p strong { color: var(--ink); }
+
+  /* Philosophy section */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+  }
+  @media (max-width: 800px) {
+    .philosophy-grid { grid-template-columns: 1fr; }
+  }
+  .phil-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+  }
+  .phil-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .phil-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .phil-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* Tier cards (SoloTasker vs HappyTasker) */
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 800px) {
+    .tier-grid { grid-template-columns: 1fr; }
+  }
+  .tier {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tier.featured {
+    border: 2px solid var(--orange);
+  }
+  .tier.featured::after {
+    content: "MOST POPULAR";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .tier-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .tier-price {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+  .tier-price small {
+    font-size: 14px;
+    color: var(--gray);
+    font-weight: 600;
+  }
+  .tier-tagline {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .tier-features {
+    list-style: none;
+  }
+  .tier-features li {
+    padding: 8px 0 8px 26px;
+    position: relative;
+    font-size: 14px;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+  }
+  .tier-features li:last-child { border-bottom: 0; }
+  .tier-features li.yes::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background: var(--green-soft);
+    color: var(--green-deep);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tier-features li.no::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background: var(--red-soft);
+    color: var(--red);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .value-note {
+    color: var(--gray);
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 4px;
+    white-space: nowrap;
+  }
+  .tools-detail {
+    margin-top: 16px;
+    background: var(--bg);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .tools-detail summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 18px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .tools-detail summary::-webkit-details-marker {
+    display: none;
+  }
+  .tools-detail summary::after {
+    content: "▾";
+    font-size: 11px;
+    color: var(--gray);
+    transition: transform 0.2s ease;
+    display: inline-block;
+    margin-left: 12px;
+  }
+  .tools-detail summary:hover {
+    color: var(--ink);
+    background: rgba(0,0,0,0.02);
+  }
+  .tools-detail[open] summary {
+    color: var(--ink);
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+  }
+  .tools-detail[open] summary::after {
+    transform: rotate(180deg);
+  }
+  .tools-detail-list {
+    list-style: none;
+    padding: 10px 18px 14px 18px;
+  }
+  .tools-detail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+    gap: 12px;
+  }
+  .tools-detail-list li:last-child {
+    border-bottom: 0;
+  }
+  .tools-detail-list li span:last-child {
+    color: var(--gray);
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .tier-compare {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .tier-compare-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .tier-compare-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .tier-compare.you-pay .tier-compare-label {
+    color: var(--orange-deep);
+    font-weight: 600;
+  }
+  .tier-compare.you-pay .tier-compare-value {
+    color: var(--orange-deep);
+    font-size: 17px;
+  }
+  .tier-compare.you-pay {
+    border-top: 0;
+    padding-top: 4px;
+    margin-top: 4px;
+  }
+  .tier-guarantee {
+    margin: 16px 0;
+    background: #FFFAF0;
+    border: 1px solid rgba(247, 136, 12, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .tier-guarantee summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--orange-deep);
+    user-select: none;
+    letter-spacing: -0.005em;
+  }
+  .tier-guarantee summary::-webkit-details-marker {
+    display: none;
+  }
+  .tier-guarantee summary::after {
+    content: "▾";
+    font-size: 11px;
+    color: var(--orange-deep);
+    transition: transform 0.2s ease;
+    margin-left: auto;
+  }
+  .tier-guarantee[open] summary::after {
+    transform: rotate(180deg);
+  }
+  .tier-guarantee-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--orange);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .tier-guarantee-content {
+    padding: 12px 14px 14px 14px;
+    border-top: 1px dashed rgba(247, 136, 12, 0.2);
+  }
+  .tier-guarantee-promise {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .tier-guarantee-list {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  .tier-guarantee-list li {
+    padding: 5px 0 5px 18px;
+    position: relative;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .tier-guarantee-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .tier-guarantee-note {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.5;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(247, 136, 12, 0.15);
+  }
+
+  /* Checklist (refund qualification) */
+  .checklist-card {
+    background: linear-gradient(135deg, var(--orange-soft) 0%, #FFF8EE 100%);
+    border: 1px solid var(--orange);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .checklist-card h3 {
+    color: var(--orange-deep);
+    margin-bottom: 8px;
+  }
+  .checklist-card .sub {
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .checklist {
+    list-style: none;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .checklist li {
+    padding: 10px 0 10px 36px;
+    position: relative;
+    font-size: 15px;
+    color: var(--ink);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    line-height: 1.5;
+  }
+  .checklist li:last-child { border-bottom: 0; }
+  .checklist li::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 14px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--orange);
+    border-radius: 5px;
+    background: #fff;
+  }
+  .checklist li strong { color: var(--orange-deep); }
+  .exit-policy {
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .exit-policy strong { color: var(--ink); }
+
+  /* Post-purchase expectations screen mockup */
+  .expect-wrap {
+    margin-top: 18px;
+  }
+  .expect-screen {
+    max-width: 380px;
+    margin: 0 auto 20px auto;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+    overflow: hidden;
+  }
+  .expect-screen-header {
+    background: var(--orange);
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .expect-screen-body {
+    padding: 24px 22px 22px 22px;
+  }
+  .expect-screen-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 20px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .expect-step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .expect-step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--orange-soft);
+    color: var(--orange-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .expect-step-content h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .expect-step-content p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .expect-screen-footnote {
+    background: var(--bg);
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .expect-screen-cta {
+    width: 100%;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+  }
+  .expect-screen-cta:hover {
+    background: var(--orange-deep);
+  }
+  .expect-caption {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .expect-reasoning {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 26px;
+  }
+  .expect-reasoning-header {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+    margin-bottom: 6px;
+  }
+  .expect-reasoning-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+  .expect-reasoning ul {
+    list-style: none;
+  }
+  .expect-reasoning li {
+    padding: 12px 0 12px 24px;
+    position: relative;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--line);
+  }
+  .expect-reasoning li:last-child { border-bottom: 0; }
+  .expect-reasoning li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: var(--orange);
+    font-weight: 700;
+  }
+  .expect-reasoning li strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* Referral ladder */
+  .ladder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+  @media (max-width: 800px) {
+    .ladder { grid-template-columns: 1fr; }
+  }
+  .rung {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .rung::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--orange);
+  }
+  .rung.gold::before { background: var(--gold); }
+  .rung.green::before { background: var(--green); }
+  .rung-count {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 2px;
+  }
+  .rung-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .rung h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .rung ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .rung ul li {
+    padding: 4px 0 4px 16px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    position: relative;
+    line-height: 1.4;
+  }
+  .rung ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  /* Personas */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 800px) {
+    .persona-grid { grid-template-columns: 1fr; }
+  }
+  .persona {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px;
+  }
+  .persona-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .persona-a .persona-tag { background: var(--blue-soft); color: var(--blue-deep); }
+  .persona-b .persona-tag { background: var(--orange-soft); color: var(--orange-deep); }
+  .persona h3 { margin-bottom: 10px; }
+  .persona-meta {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .persona-meta strong { color: var(--ink); display: block; margin-top: 12px; margin-bottom: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Content engine */
+  .engine-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 700px) {
+    .engine-grid { grid-template-columns: 1fr; }
+  }
+  .engine-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .engine-badge {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .engine-card h4 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .engine-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .engine-card .engine-meta {
+    font-size: 12px;
+    color: var(--gray);
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+    margin-top: 8px;
+  }
+  .engine-detail {
+    margin-top: 10px;
+  }
+  .engine-detail summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+  .engine-detail summary::-webkit-details-marker {
+    display: none;
+  }
+  .engine-detail summary::after {
+    content: "▾";
+    font-size: 10px;
+    transition: transform 0.2s ease;
+    color: var(--orange-deep);
+  }
+  .engine-detail[open] summary::after {
+    transform: rotate(180deg);
+  }
+  .engine-detail summary:hover {
+    color: var(--orange);
+  }
+  .engine-detail-body {
+    padding-top: 14px;
+  }
+  .engine-detail-block {
+    margin-bottom: 16px;
+  }
+  .engine-detail-block:last-child {
+    margin-bottom: 0;
+  }
+  .engine-detail-block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .engine-detail-block ul {
+    list-style: none;
+  }
+  .engine-detail-block li {
+    padding: 5px 0 5px 18px;
+    position: relative;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .engine-detail-block li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  /* Timeline */
+  .timeline {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .phase {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .phase:last-child { border-bottom: 0; }
+  .phase-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .phase-num {
+    background: var(--orange);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .phase-days {
+    font-size: 13px;
+    color: var(--gray);
+    font-weight: 600;
+  }
+  .phase h3 {
+    font-size: 19px;
+    margin-bottom: 0;
+  }
+  .phase-body {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .phase-body ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .phase-body li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+  .phase-body li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  /* Cost */
+  .cost-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .cost-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 15px;
+  }
+  .cost-line .desc { color: var(--ink-soft); }
+  .cost-line .amt { font-weight: 700; color: var(--ink); }
+  .cost-line.revenue .amt { color: var(--green-deep); }
+  .cost-line.total {
+    border-bottom: 0;
+    border-top: 2px solid var(--ink);
+    margin-top: 8px;
+    padding-top: 16px;
+    font-size: 17px;
+  }
+  .cost-line.total .desc { font-weight: 700; color: var(--ink); }
+  .cost-line.total .amt { font-size: 22px; color: var(--red); }
+  .cost-footnote {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: var(--green-soft);
+    border-radius: 10px;
+    color: var(--green-deep);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .cost-footnote strong { color: var(--green-deep); }
+
+  /* Scalability */
+  .scale-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 900px) {
+    .scale-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .scale-grid { grid-template-columns: 1fr; }
+  }
+  .scale {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scale::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--orange);
+  }
+  .scale.t2::before { background: #F9A93C; }
+  .scale.t3::before { background: var(--gold); }
+  .scale.t4::before { background: var(--green); }
+  .scale-amount {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 2px;
+  }
+  .scale-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .scale h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .scale ul {
+    list-style: none;
+  }
+  .scale li {
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding: 4px 0 4px 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .scale li::before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+
+  /* Brief comparison */
+  .compare-brief {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 800px) {
+    .compare-brief { grid-template-columns: 1fr; }
+  }
+  .cb {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cb::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+  }
+  .cb-a::before { background: var(--orange); }
+  .cb-b::before { background: var(--blue); }
+  .cb h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .cb-tag {
+    font-size: 12px;
+    color: var(--gray);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .cb-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .cb-side {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .cb-side h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cb-side.pros h5 { color: var(--green-deep); }
+  .cb-side.cons h5 { color: var(--red); }
+  .cb-side ul {
+    list-style: none;
+  }
+  .cb-side li {
+    font-size: 13px;
+    padding: 4px 0;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .cb-verdict {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .cb-verdict strong { color: var(--orange); }
+
+  /* Risks */
+  .risks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 700px) {
+    .risks-grid { grid-template-columns: 1fr; }
+  }
+  .risk-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .risk-card h4 {
+    font-size: 15px;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .risk-card .mitigation {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--green-soft);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--green-deep);
+    line-height: 1.5;
+  }
+  .risk-card .mitigation strong { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .risk-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+
+  /* Next steps */
+  .next {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px;
+  }
+  .next .next-eyebrow {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .next h2 {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .next-list {
+    list-style: none;
+    counter-reset: step;
+  }
+  .next-list li {
+    padding: 14px 14px 14px 50px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    color: #DADADA;
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+    counter-increment: step;
+  }
+  .next-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 24px;
+    height: 24px;
+    background: var(--orange);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .next-list li strong { color: #fff; }
+
+  /* Footer */
+  footer.foot {
+    text-align: center;
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .brand {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; }
+    header.hero, .card, .tier, .phase, .cost-card, .scale, .cb, .risk-card, .next {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">HappyTask Vegas GTM &middot; Recommended Path</div>
+    <h1>The <span class="accent">Open Entrepreneur Platform</span>. The Vegas service marketplace built for hustlers, not gig workers.</h1>
+    <p>We're not running a job board. We're not running a giveaway. We're building the strongest entrepreneur-driven service platform in Vegas, and we're doing it bootstrap-style with viral content, smart positioning, and platform mechanics that reward real effort. This is the 14-day execution plan.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-label">Target</div>
+        <div class="hero-stat-value">40 paid</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Window</div>
+        <div class="hero-stat-value">14 days</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Net cash cost</div>
+        <div class="hero-stat-value">~$535</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Content pieces</div>
+        <div class="hero-stat-value">~85</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- THE BIG IDEA -->
+  <section>
+    <div class="section-eyebrow">The big idea</div>
+    <h2>Filter at awareness, not at signup.</h2>
+    <div class="card" style="margin-top: 8px;">
+      <p>The ZipRecruiter lesson was never about being open versus selective. It was about <strong>who saw us in the first place</strong>. Job boards attract job hunters. Our content channels will attract entrepreneurs. The filter doesn't need to live at a gate. It lives in three layers, in order:</p>
+
+      <div class="philosophy-grid">
+        <div class="phil-card">
+          <div class="phil-num">1</div>
+          <h4>Awareness layer</h4>
+          <p>Marketing and content determine WHO sees us. We only show up where entrepreneurs hang out and only speak their language. The wrong people self-skip before they ever hit our site.</p>
+        </div>
+        <div class="phil-card">
+          <div class="phil-num">2</div>
+          <h4>Conversion layer</h4>
+          <p>Signup stays OPEN. $49 HappyTasker or free SoloTasker. Volume matters. Empty search results kill the client side later. We want a stocked, lively platform.</p>
+        </div>
+        <div class="phil-card">
+          <div class="phil-num">3</div>
+          <h4>Surfacing layer</h4>
+          <p>Reviews, ratings, profile completeness scores, and homepage curation push the great providers to the top. A monthly "Vegas Hustler of the Month" recognition program spotlights top performers (no cash, just prestige and visibility). The wrong ones still sit in the catalog without polluting search results.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 18px;">This is how Airbnb built their host base. They didn't gatekeep applicants. They built ranking and review systems to surface the right ones. We do the same, with a Vegas twist.</p>
+    </div>
+  </section>
+
+  <!-- THE OFFER ARCHITECTURE -->
+  <section>
+    <div class="section-eyebrow">The offer</div>
+    <h2>Two ways to join. Both stay open. Zero gatekeeping.</h2>
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="tier-name">SoloTasker</div>
+        <div class="tier-price">Free</div>
+        <div class="tier-tagline">For independent people who already have their own clients and want to use our tools to run more professionally.</div>
+        <ul class="tier-features">
+          <li class="yes">All HappyTask tools</li>
+          <li class="yes">Your own website with your services</li>
+          <li class="no">Not listed in HappyTask search results</li>
+          <li class="no">No background check</li>
+          <li class="no">No HappyTask Starter Kit (shirt, hat, more)</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-name">HappyTasker</div>
+        <div class="tier-price">$49 <small>one time</small></div>
+        <div class="tier-tagline">For people who want clients sent to them and a better shot at growing through the platform.</div>
+        <details class="tier-guarantee">
+          <summary>
+            <span class="tier-guarantee-icon">✓</span>
+            <span>Backed by the First Booking Promise</span>
+          </summary>
+          <div class="tier-guarantee-content">
+            <p class="tier-guarantee-promise">If we don't get you booked in 14 days, your $49 is refunded. Two conditions:</p>
+            <ul class="tier-guarantee-list">
+              <li>Get your profile team-approved by Day 7</li>
+              <li>Keep your 10+ hour weekly availability live for the full 14 days</li>
+            </ul>
+            <p class="tier-guarantee-note">Take the refund and leave, or pass on it and stay on the platform to keep building. Your call.</p>
+          </div>
+        </details>
+        <ul class="tier-features">
+          <li class="yes">All HappyTask tools <span class="value-note">~$115/mo value</span></li>
+          <li class="yes">Your own website with your services <span class="value-note">~$20/mo value</span></li>
+          <li class="yes">Listed in HappyTask search results</li>
+          <li class="yes">Background check <span class="value-note">$45 value</span></li>
+          <li class="yes">HappyTask Starter Kit (shirt, hat, more) <span class="value-note">$40 value</span></li>
+        </ul>
+        <details class="tools-detail">
+          <summary>What's inside HappyTask tools</summary>
+          <ul class="tools-detail-list">
+            <li><span>CRM for client base building</span><span>~$25/mo</span></li>
+            <li><span>Custom scheduling &amp; availability</span><span>~$15/mo</span></li>
+            <li><span>Automated invoicing &amp; payments</span><span>~$20/mo</span></li>
+            <li><span>In-platform client messaging</span><span>~$10/mo</span></li>
+            <li><span>Website view tracking</span><span>~$15/mo</span></li>
+            <li><span>Classroom: pricing &amp; follow-up lessons</span><span>~$30/mo</span></li>
+            <li><span>ZIP code targeting &amp; self-set rates</span><span>included</span></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FIRST BOOKING PROMISE -->
+  <section>
+    <div class="section-eyebrow">The First Booking Promise</div>
+    <h2>Have your marketing page ready by Day 7. If we don't get you booked by Day 14, your $49 is refunded.</h2>
+    <div class="checklist-card">
+      <h3>To qualify for the refund, the HappyTasker must complete ALL 6 below AND be team-approved by Day 7:</h3>
+      <p class="sub">Day 7 isn't arbitrary. Once a profile is Launch-Ready, clients and our team need at least 7 days to discover them and drive bookings their way. Anything completed after Day 7 doesn't get a real chance. This is the same bar that gives them a real shot at getting hired. We're not making it harder than necessary. We're making it real.</p>
+      <ul class="checklist">
+        <li><strong>Profile picture</strong> (real, professional, not a blurry selfie)</li>
+        <li><strong>About Me section</strong> filled out with their skills/service preferences/background story</li>
+        <li><strong>At least 3 content photos</strong> showing actual work or portfolio</li>
+        <li><strong>At least 1 video</strong> on their profile (of their work, a before-and-after, or an intro video if they're new and don't have service content yet)</li>
+        <li><strong>10+ hours of weekly availability</strong> set in their schedule</li>
+        <li><strong>Service offered in at least 3 zip codes</strong> (adjacent zips ideally, to keep travel reasonable)</li>
+      </ul>
+      <div class="exit-policy">
+        <strong>The clean-exit policy:</strong> If they hit all 6 and still aren't booked by Day 14, they have a choice: claim their $49 back and exit with no questions or friction, or pass on the refund and stay on the platform to keep building. We honor whichever direction they choose. If they didn't hit the 6, no refund applies, but they're welcome to stay and keep building toward Launch-Ready.
+      </div>
+    </div>
+  </section>
+
+  <!-- POST-PURCHASE EXPECTATIONS SCREEN -->
+  <section>
+    <div class="section-eyebrow">What new HappyTaskers see right after paying</div>
+    <h2>The two-way commitment screen.</h2>
+    <div class="expect-wrap">
+      <p class="expect-caption">Mockup of the welcome screen shown the moment they pay $49</p>
+      <div class="expect-screen">
+        <div class="expect-screen-header">HappyTask</div>
+        <div class="expect-screen-body">
+          <div class="expect-screen-title">Welcome to HappyTask, [Name].<br>Here's how your next 14 days work.</div>
+
+          <div class="expect-step">
+            <div class="expect-step-num">1</div>
+            <div class="expect-step-content">
+              <h4>Get team-approved</h4>
+              <p>You complete the 6: profile pic, about me, 3+ photos, 1+ video, 10+ hours of weekly availability, and 3+ zip codes. We review and approve fast. The moment you're approved, you're live in search and our team starts working bookings on your behalf.</p>
+            </div>
+          </div>
+
+          <div class="expect-step">
+            <div class="expect-step-num">2</div>
+            <div class="expect-step-content">
+              <h4>Get discovered</h4>
+              <p>While you're live, your profile shows in HappyTask search results for clients in your zip codes. Bookings can come any day. Keep your availability open and your inbox checked.</p>
+            </div>
+          </div>
+
+          <div class="expect-step">
+            <div class="expect-step-num">3</div>
+            <div class="expect-step-content">
+              <h4>Day 14 checkpoint</h4>
+              <p>If you hit all 6 by Day 7, kept your availability live the whole time, and still aren't booked by Day 14, you have a choice: claim your $49 back with no questions and no friction, or stay on the platform and keep building. We're rooting for you either way.</p>
+            </div>
+          </div>
+
+          <div class="expect-screen-footnote">Most HappyTaskers are team-approved within 24 to 48 hours.</div>
+
+          <button class="expect-screen-cta">Let's get started</button>
+        </div>
+      </div>
+
+      <div class="expect-reasoning">
+        <div class="expect-reasoning-header">Why this screen exists</div>
+        <p class="expect-reasoning-sub">This is the single most important communication moment in the entire HappyTasker journey. They've just paid. They're at peak attention. Whatever we put on this screen sets the expectations that drive their behavior for the next 14 days. Here's the reasoning behind each design choice.</p>
+        <ul>
+          <li><strong>Preempts expectation mismatch.</strong> The refund window is clearly explained upfront with its real conditions. Nobody hits Day 14 thinking they're entitled to a refund just because they paid. Eliminates the most likely source of bad reviews and disputes.</li>
+          <li><strong>Frames the relationship as two-way.</strong> Every step shows what we do AND what they do. Sets a partnership tone, not a transaction tone. "We approve fast. You build a real profile. We drive bookings. You stay available."</li>
+          <li><strong>Creates soft urgency without nagging.</strong> "Most are team-approved within 24 to 48 hours" is a normative speed expectation. It pushes them to act fast because peer behavior tells them that's the norm, not because we're chasing them.</li>
+          <li><strong>Shifts mindset from "I bought access" to "I'm starting a 14-day sprint."</strong> Pay alone doesn't create commitment. A clear timeline does. Tasks framed as "your next 14 days" are way more activating than "your account is ready."</li>
+          <li><strong>Makes the Day 7 deadline land as fair.</strong> By tying it to the operational logic ("we need at least 7 days to drive bookings your way") instead of presenting it as an arbitrary rule, it reads as us being honest about what makes the platform work.</li>
+          <li><strong>Reduces purchase regret.</strong> "No questions, no friction. Walk away with our blessing" telegraphs integrity right after they spent $49. This single line probably saves us 10 to 20 percent of cancellation pressure in the first 24 hours.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERRAL LADDER -->
+  <section>
+    <div class="section-eyebrow">The referral system (no cash)</div>
+    <h2>HappyTaskers who bring others get visibility, not cash.</h2>
+    <div class="card" style="margin-bottom: 16px;">
+      <p>Every referral perk is something we already own (the platform itself, content production, badges). It costs us $0 in cash and is worth far more to a HappyTasker than a $100 check, because every perk drives real bookings for them.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <div class="rung-count">1</div>
+        <div class="rung-label">paid referral</div>
+        <h4>Homepage Spotlight Slot</h4>
+        <p style="font-size: 14px; color: var(--ink-soft); margin-bottom: 8px;">A free 24-hour featured slot on the HappyTask homepage. Pure visibility, drives bookings directly.</p>
+        <ul>
+          <li>Front-page placement for 24 hours</li>
+          <li>Stackable: 2 referrals = 2 days, etc.</li>
+        </ul>
+      </div>
+      <div class="rung gold">
+        <div class="rung-count">3</div>
+        <div class="rung-label">paid referrals</div>
+        <h4>Vegas Connector Badge</h4>
+        <p style="font-size: 14px; color: var(--ink-soft); margin-bottom: 8px;">A permanent badge on their profile that signals trust to clients, plus a featured reel produced by our team.</p>
+        <ul>
+          <li>Permanent badge on profile</li>
+          <li>60-sec featured reel we produce</li>
+          <li>Distribution across HappyTask socials</li>
+        </ul>
+      </div>
+      <div class="rung green">
+        <div class="rung-count">5</div>
+        <div class="rung-label">paid referrals</div>
+        <h4>Founding Connector status</h4>
+        <p style="font-size: 14px; color: var(--ink-soft); margin-bottom: 8px;">Lifetime tier with the strongest perks we offer. The community organizers we want building this with us.</p>
+        <ul>
+          <li>Lifetime priority search placement</li>
+          <li>Monthly featured rotation</li>
+          <li>Founder podcast / interview slot</li>
+          <li>Quarterly Founding Connector dinner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE TARGET -->
+  <section>
+    <div class="section-eyebrow">Who we target</div>
+    <h2>Two personas. Two content tracks. Same platform.</h2>
+    <div class="persona-grid">
+      <div class="persona persona-a">
+        <span class="persona-tag">Persona A</span>
+        <h3>The Refugee</h3>
+        <p style="color: var(--ink-soft); font-size: 14px; line-height: 1.6;">Already running a service. Already on Thumbtack, TaskRabbit, Rover, or Yelp. Frustrated by fees, competition, and platform abuse. Wants more control and to keep more of what they earn.</p>
+        <div class="persona-meta">
+          <strong>Where they live online</strong>
+          Their current platforms, Reddit communities (r/Thumbtack, r/TaskRabbit), FB groups for their craft, Yelp business owner forums, niche IG hashtags like #vegascleaner.
+
+          <strong>Content angles that work on them</strong>
+          Fee comparison content, "I switched, here's what happened" testimonials, founder commentary on corporate platform predation, factual head-to-head math.
+
+          <strong>What gets them to sign up</strong>
+          Lower fees, more control, freedom from review systems they don't trust, a Vegas-local platform that actually has their back.
+        </div>
+      </div>
+      <div class="persona persona-b">
+        <span class="persona-tag">Persona B</span>
+        <h3>The Aspiring Operator</h3>
+        <p style="color: var(--ink-soft); font-size: 14px; line-height: 1.6;">Has always wanted to launch a service. Has the tools, time, or skill but never had a platform or a playbook. Watches Hormozi and Mr Beast and entrepreneurial content. Wants freedom from a boss.</p>
+        <div class="persona-meta">
+          <strong>Where they live online</strong>
+          Side hustle TikTok, /r/sidehustle, /r/Entrepreneur, "I quit my job" content, motivational IG, YouTube how-to-start business videos, Vegas hospitality industry forums.
+
+          <strong>Content angles that work on them</strong>
+          "$0 to $5K/month" playbooks, "I quit my W2 to ___" stories, tools-you-already-have content, beginner-friendly how-tos, lifestyle aspiration.
+
+          <strong>What gets them to sign up</strong>
+          Permission to start, proof other people did it, a playbook they can follow, a low-risk way to test if this is for them.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CONTENT ENGINE -->
+  <section>
+    <div class="section-eyebrow">The viral content engine</div>
+    <h2>Five content franchises running in parallel for 14 days.</h2>
+    <div class="card" style="margin-bottom: 16px;">
+      <p>This is what attracts the right type of person at the awareness layer. Five content tracks selected because they each pull a different lever: trust, education, accessibility, entertainment, and proof. Cross-posted to TikTok, IG, FB Reels, X. ~85 pieces over 14 days, batch-recorded across 2 production days.</p>
+    </div>
+
+    <div class="engine-grid">
+      <div class="engine-card">
+        <span class="engine-badge">FRANCHISE 1</span>
+        <h4>Founder Build-in-Public Vlog</h4>
+        <p>Zandr daily. 60 seconds. Real numbers, real wins, real struggles. Builds parasocial trust faster than any ad. Plays to both personas.</p>
+        <div class="engine-meta">14 episodes &middot; daily &middot; both personas</div>
+        <details class="engine-detail">
+          <summary>See video ideas + why it works</summary>
+          <div class="engine-detail-body">
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Sample video ideas</div>
+              <ul>
+                <li>"Day 3 of trying to hit 40 paid HappyTaskers. Here's where we're at."</li>
+                <li>"Got our 7th signup today. Her story will surprise you."</li>
+                <li>"Just spent $200 on FB ads and got 0 clicks. Here's what I'm changing."</li>
+                <li>"We just paid our first refund. Here's why I'm okay with it."</li>
+                <li>"Behind the scenes: we shot 30 videos in one Saturday. Watch us fail."</li>
+                <li>"Day 9: this is harder than I thought. Real talk."</li>
+              </ul>
+            </div>
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Why it works</div>
+              <ul>
+                <li>Parasocial trust compounds daily. Audience starts rooting for you within a week.</li>
+                <li>Vulnerability + real numbers = authentic credibility no ad can buy.</li>
+                <li>Zero production cost. Phone, face, 5 minutes a day.</li>
+                <li>Algorithm-friendly: TikTok and IG Reels reward consistent daily posting.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="engine-card">
+        <span class="engine-badge">FRANCHISE 2</span>
+        <h4>Value Bombs (Hormozi format)</h4>
+        <p>Free education. "How to start a cleaning service in Vegas." "How to land your first 10 dog walking clients." Long-term SEO + short-term viral. Shapes who self-selects into our funnel.</p>
+        <div class="engine-meta">~20 pieces &middot; mostly Persona B</div>
+        <details class="engine-detail">
+          <summary>See video ideas + why it works</summary>
+          <div class="engine-detail-body">
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Sample video ideas</div>
+              <ul>
+                <li>"If I had to start a HappyTask service today, here's exactly what I'd do."</li>
+                <li>"How to make a better marketing page than 95% of HappyTaskers."</li>
+                <li>"The exact pricing formula Vegas cleaners use to land $35/hr clients."</li>
+                <li>"Why your About Me is killing your bookings (and how to fix it in 10 minutes)."</li>
+                <li>"Free script: how to respond to a client inquiry in under 2 minutes."</li>
+                <li>"I analyzed 50 Vegas service provider profiles. Here's what wins."</li>
+                <li>"Vegas service rates: what to actually charge in Henderson vs Summerlin."</li>
+              </ul>
+            </div>
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Why it works</div>
+              <ul>
+                <li>Provides utility even to people who never sign up. Builds platform authority.</li>
+                <li>SEO compounding: every "how to start a ___ in Vegas" query lands on our content.</li>
+                <li>Shapes who self-selects. Only entrepreneurs and aspiring ones watch this stuff.</li>
+                <li>Each video is evergreen and reusable as ad creative later.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="engine-card">
+        <span class="engine-badge">FRANCHISE 3</span>
+        <h4>Tools You Already Have</h4>
+        <p>"You have a vacuum and Saturday? You're a cleaner. You have a car? You're a dog walker." Lowers the mental entry barrier and frames the platform as actually obtainable.</p>
+        <div class="engine-meta">8 episodes &middot; one per category &middot; Persona B</div>
+        <details class="engine-detail">
+          <summary>See video ideas + why it works</summary>
+          <div class="engine-detail-body">
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Sample video ideas</div>
+              <ul>
+                <li>"You have a vacuum, a phone, and a Saturday. You're a HappyTask cleaner now."</li>
+                <li>"You drive a Honda Civic. You're a HappyTask pet sitter now."</li>
+                <li>"You have a kid in school and 4 hours free. You're a HappyTask babysitter."</li>
+                <li>"You have a basic toolset and YouTube. You're a HappyTask handyman."</li>
+                <li>"You speak Spanish AND English. You're a HappyTask language tutor."</li>
+                <li>"You have a soap bucket, soft sponges, and a hose. You're a HappyTask car washer."</li>
+              </ul>
+            </div>
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Why it works</div>
+              <ul>
+                <li>Lowers the mental barrier for Persona B. "I could actually do this" is the unlock.</li>
+                <li>Each video targets one launch service category. 8 categories = 8 episodes, full coverage.</li>
+                <li>Empowering framing without being condescending or selling.</li>
+                <li>Easy to remix as IG carousels and FB story sequences for cross-platform reach.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="engine-card">
+        <span class="engine-badge">FRANCHISE 4</span>
+        <h4>Founder Tries Every Service</h4>
+        <p>Zandr does each service category for a day. Documents what it actually takes to start. Hands the work to a real HappyTasker at the end. Educational, funny, viral-friendly. Proves anyone can do this.</p>
+        <div class="engine-meta">6 to 8 episodes &middot; field production &middot; both personas</div>
+        <details class="engine-detail">
+          <summary>See video ideas + why it works</summary>
+          <div class="engine-detail-body">
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Sample video ideas</div>
+              <ul>
+                <li>"I cleaned a Vegas Airbnb for $80. Here's what I learned."</li>
+                <li>"I walked 4 dogs in 110° heat. Now I respect every dog walker."</li>
+                <li>"I tried being a pet groomer for a day. Got bit twice."</li>
+                <li>"I did 8 hours of handyman work. My back will never recover."</li>
+                <li>"Mobile car wash on the Strip: how much I made in 4 hours."</li>
+                <li>"I babysat for 6 hours. Made $90. Lost a year of my life."</li>
+              </ul>
+            </div>
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Why it works</div>
+              <ul>
+                <li>Founder eating their own dog food is the ultimate trust signal. Skin in the game.</li>
+                <li>Funny + educational hybrid is rare in this category and instantly stands out.</li>
+                <li>Each episode ends with passing the work to a real HappyTasker. Free spotlight for them, free credibility for us.</li>
+                <li>Behind-the-scenes content gets algorithm boosts on every platform.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="engine-card">
+        <span class="engine-badge">FRANCHISE 5</span>
+        <h4>3 Founders Docuseries</h4>
+        <p>Pick 3 aspiring HappyTaskers at Day 7 (after they've shown self-driven effort). Document their first 30 days. Weekly drops. The doc IS the marketing for Persona B.</p>
+        <div class="engine-meta">4 weekly episodes &middot; high-leverage Persona B</div>
+        <details class="engine-detail">
+          <summary>See video ideas + why it works</summary>
+          <div class="engine-detail-body">
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Sample episode arcs</div>
+              <ul>
+                <li>"Episode 1: Meet the 3 Vegas hustlers we're documenting for 30 days."</li>
+                <li>"Day 7: Maria booked 3 clients already. Here's how she did it."</li>
+                <li>"Day 14: Marcus hasn't booked anyone yet. Here's what he's changing."</li>
+                <li>"Day 21: We sent a client to Lisa. Watch her reaction."</li>
+                <li>"Day 30: Final results. Who hit their stride. Who's still grinding."</li>
+              </ul>
+            </div>
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Why it works</div>
+              <ul>
+                <li>Episodic format creates recurring audience. People come back for the next ep.</li>
+                <li>Real stakes, real people = emotional investment. Audiences root for participants.</li>
+                <li>The doc IS the marketing for Persona B (Aspiring Operators). Living proof it's possible.</li>
+                <li>Free spotlight is massive incentive for the 3 chosen HappyTaskers to opt in.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="engine-card">
+        <span class="engine-badge">SUPPORTING</span>
+        <h4>Funny Vegas-flavored bits</h4>
+        <p>8 batch-recorded comedy bits (Vegas client archetypes, reading bad bios, "POV: dog walker in Vegas when it's 110°", etc). Algorithm fuel. Brand voice differentiator.</p>
+        <div class="engine-meta">8 pieces &middot; one batch day &middot; algorithm fuel</div>
+        <details class="engine-detail">
+          <summary>See video ideas + why it works</summary>
+          <div class="engine-detail-body">
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Sample video ideas</div>
+              <ul>
+                <li>"Reading bad Vegas service provider bios" (dramatic voiceover, comedy gold)</li>
+                <li>"POV: You're a dog walker in Vegas when it's 110° out"</li>
+                <li>"Vegas client archetypes you've definitely met" (skit with multiple characters)</li>
+                <li>"Asking Vegas tourists what they'd pay for cleaning" (street interview, wild answers)</li>
+                <li>"Talking to my W2 boss vs talking to a HappyTask client" (split-screen)</li>
+                <li>"When the client asks you to do just one more thing..." (every provider's nightmare)</li>
+                <li>"AI tried to be a HappyTasker" (Roomba fail edit)</li>
+              </ul>
+            </div>
+            <div class="engine-detail-block">
+              <div class="engine-detail-block-label">Why it works</div>
+              <ul>
+                <li>Humor performs 3 to 5x better than educational content on TikTok and Reels.</li>
+                <li>Brand voice differentiator. No other service platform is doing comedy.</li>
+                <li>Shareable as memes, not just videos. Adds organic reach beyond followers.</li>
+                <li>One batch day = 8 pieces, all evergreen and reusable in ads later.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE 14-DAY TIMELINE -->
+  <section>
+    <div class="section-eyebrow">The 14-day execution timeline</div>
+    <h2>Three phases. One ship date. Zero excuses.</h2>
+    <div class="timeline">
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-num">PHASE 1</span>
+          <span class="phase-days">Days 1 to 3</span>
+        </div>
+        <h3>Foundation week</h3>
+        <div class="phase-body">
+          <p>Get the engine built before lighting the match. No public launch yet.</p>
+          <ul>
+            <li>Re-engage all 94 existing warm leads (28 with accounts, 66 who started onboarding) with the refreshed offer. This is the lowest-hanging fruit. Could net 8 to 15 paid before public launch.</li>
+            <li>Build the post-purchase welcome screen for new HappyTaskers (the Day 14 checkpoint expectations screen mocked up in this doc).</li>
+            <li>Configure the ZIP-first graceful search and the missed-jobs notifications that surface demand signals to HappyTaskers in nearby zip codes.</li>
+            <li>Set up the referral perks system in the platform (homepage spotlight slot, Vegas Connector badge, Founding Connector tier).</li>
+            <li>Batch record Day 1 of content: bank 4 founder vlogs, 4 value bombs, 4 funny bits, and the first 2 "Tools You Have" episodes. One Saturday afternoon.</li>
+            <li>Write the 14-day content calendar so we're never improvising.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-num">PHASE 2</span>
+          <span class="phase-days">Days 4 to 10</span>
+        </div>
+        <h3>Public launch and acquisition surge</h3>
+        <div class="phase-body">
+          <p>Everything goes live. Content drops daily. Ads activate. The funnel runs.</p>
+          <ul>
+            <li>Day 4: Launch video drops across all four platforms simultaneously at 7am. Landing page goes live.</li>
+            <li>Day 4: Paid ads activate ($1,500 over 14 days: $500 Meta Lead Ads, $500 TikTok Spark Ads, $300 Google Search on competitor keywords, $200 retargeting)</li>
+            <li>Days 4-10: One founder vlog per day. One value bomb every other day. Funny bit every 3 days. Tools-You-Have episode weekly. Founder Tries episode weekly.</li>
+            <li>DM outreach: 60 DMs per person per day, both of us, targeting existing Vegas operators on IG/FB/Yelp/Thumbtack</li>
+            <li>FB Group + Nextdoor organic posts in 15+ Vegas-specific groups</li>
+            <li>Day 7: Lock in the 3 Founders docuseries cast. Pick from HappyTaskers who've shown self-driven effort in their first week.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-num">PHASE 3</span>
+          <span class="phase-days">Days 11 to 14</span>
+        </div>
+        <h3>Closing surge to 40</h3>
+        <div class="phase-body">
+          <p>Last push to 40. Earliest HappyTaskers approach their Day 14 checkpoint.</p>
+          <ul>
+            <li>"Final 9 spots" content urgency posts every 12 hours</li>
+            <li>Personal calls/DMs to every warm lead who hit the page but didn't pay</li>
+            <li>Ad budget weighted to the closing week if hitting numbers</li>
+            <li>First 3 Founders docuseries episode drops at Day 11</li>
+            <li>Process any Day 14 checkpoint choices from earliest signups (refund + exit, or pass and stay) with no friction either way.</li>
+            <li>Hit 40 paid HappyTaskers by end of Day 14</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTION SCHEDULE -->
+  <section>
+    <div class="section-eyebrow">The production reality</div>
+    <h2>How 2 people make 85 pieces of content in 14 days.</h2>
+    <div class="card">
+      <p><strong>The whole engine works because we batch by setting, not by topic.</strong> One location, one outfit, multiple formats. Two big shoot days bank most of the library. Daily content is the 5-minute phone-shot vlog. Editing is light-touch on TikTok/Reels (captions, music, no heavy post).</p>
+
+      <div style="margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div style="background: var(--bg); padding: 18px; border-radius: 12px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--orange-deep);">Batch Day 1 (Saturday)</h4>
+          <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.55;">Kitchen / home base. Talking head + skits. 5 funny bits, 4 founder vlogs banked, 6 HappyTasker testimonials, 4 value bombs. ~19 pieces in one day.</p>
+        </div>
+        <div style="background: var(--bg); padding: 18px; border-radius: 12px;">
+          <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--orange-deep);">Batch Day 2 (Sunday)</h4>
+          <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.55;">Field locations. 4 "Founder Tries" episodes back-to-back. 2 day-in-the-life shadow shoots with existing HappyTaskers. ~10 pieces.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; background: var(--bg); padding: 18px; border-radius: 12px;">
+        <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--orange-deep);">Daily (Monday through Sunday, 14 days)</h4>
+        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.55;">1 founder vlog (phone-shot, 5-min effort), 1 value bomb (banked, drip-released), 1 reactive comedy bit if news/trend warrants. Total daily time: ~30 minutes per founder.</p>
+      </div>
+
+      <p style="margin-top: 16px;"><strong>Total founder time:</strong> ~2 full batch days + 30 minutes daily x 14 = ~23 hours of recording over the launch. Plus editing (or hand to an editor if budget allows: ~$15/hr x ~15 hrs = ~$225 for someone reliable).</p>
+    </div>
+  </section>
+
+  <!-- COST -->
+  <section>
+    <div class="section-eyebrow">What it actually costs</div>
+    <h2>The bootstrap math.</h2>
+    <div class="cost-card">
+      <div class="cost-line">
+        <span class="desc">14-day paid ad spend (Meta + TikTok + Google + retargeting)</span>
+        <span class="amt">$2,000</span>
+      </div>
+      <div class="cost-line">
+        <span class="desc">Production gear / editing software / minor props</span>
+        <span class="amt">$200</span>
+      </div>
+      <div class="cost-line">
+        <span class="desc">Refunds on First Booking Promise (estimate 5 qualified at $49)</span>
+        <span class="amt">$245</span>
+      </div>
+      <div class="cost-line">
+        <span class="desc">Vegas Hustler of the Month physical award + production</span>
+        <span class="amt">$50</span>
+      </div>
+      <div class="cost-line">
+        <span class="desc">Referral perks (badges, homepage slots, reels)</span>
+        <span class="amt">$0</span>
+      </div>
+      <div class="cost-line revenue">
+        <span class="desc">Revenue from 40 paid HappyTasker signups ($49 each)</span>
+        <span class="amt">+$1,960</span>
+      </div>
+      <div class="cost-line total">
+        <span class="desc">Net cash out of pocket over 14 days</span>
+        <span class="amt">-$535</span>
+      </div>
+      <div class="cost-footnote">
+        <strong>After revenue, we're approximately $535 out of pocket over 14 days (a loss, not a gain).</strong> For reference, the $10K Race option could expose us to up to $11,790 out of pocket. The Guarantee plus Build-in-Public option ran approximately $5,585 out of pocket. Option C is 4 to 22 times cheaper while reaching a wider audience and producing more content.
+      </div>
+    </div>
+  </section>
+
+  <!-- SCALABILITY -->
+  <section>
+    <div class="section-eyebrow">If we want to scale</div>
+    <h2>What more budget unlocks.</h2>
+    <div class="card" style="margin-bottom: 16px;">
+      <p>Option C is designed to compound, not burn out. Every additional dollar layers onto existing channels rather than replacing them. Here's what each budget tier unlocks while keeping the core engine intact.</p>
+    </div>
+    <div class="scale-grid">
+
+      <div class="scale">
+        <div class="scale-amount">$1K/wk</div>
+        <div class="scale-label">Baseline</div>
+        <h4>Core launch (current plan)</h4>
+        <ul>
+          <li>Meta + TikTok + Google ads</li>
+          <li>Founder-shot content only</li>
+          <li>2-person team, no contractors</li>
+          <li>Organic + paid mix</li>
+        </ul>
+      </div>
+
+      <div class="scale t2">
+        <div class="scale-amount">$2K/wk</div>
+        <div class="scale-label">Tier 2</div>
+        <h4>Content velocity unlock</h4>
+        <ul>
+          <li>Hire part-time editor (~$300/wk)</li>
+          <li>Double ad spend across channels</li>
+          <li>YouTube pre-roll on Vegas creators</li>
+          <li>Reddit ads on /r/sidehustle, /r/Vegas</li>
+          <li>2x content output capacity</li>
+        </ul>
+      </div>
+
+      <div class="scale t3">
+        <div class="scale-amount">$5K/wk</div>
+        <div class="scale-label">Tier 3</div>
+        <h4>Influencer + brand layer</h4>
+        <ul>
+          <li>10 Vegas micro-influencer partnerships ($100 each / week)</li>
+          <li>Sponsor a Vegas podcast slot</li>
+          <li>Local creator collabs (5K to 50K followers)</li>
+          <li>Higher-production "Founder Tries" episodes</li>
+          <li>Geo-targeted Spotify ads</li>
+        </ul>
+      </div>
+
+      <div class="scale t4">
+        <div class="scale-amount">$10K/wk</div>
+        <div class="scale-label">Tier 4</div>
+        <h4>Full-spectrum dominance</h4>
+        <ul>
+          <li>Vegas billboards in 3 high-traffic spots</li>
+          <li>Local radio sponsorship (Vegas morning shows)</li>
+          <li>Mid-tier creator deals (50K to 200K followers)</li>
+          <li>Hire dedicated content producer</li>
+          <li>Production team for "Founder Tries"</li>
+          <li>Expand category footprint</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top: 16px;">
+      <h3 style="font-size: 16px;">Why this scales gracefully</h3>
+      <p>Unlike the $10K Race (which is a one-time event with a binary outcome) or the Guarantee model (which scales linearly with operational burden), Option C compounds with every dollar. <strong>Content compounds.</strong> Brand compounds. Reviews compound. SEO compounds. We can dial spend up or down weekly based on what's working without breaking the core engine.</p>
+    </div>
+  </section>
+
+  <!-- BRIEF COMPARISON -->
+  <section>
+    <div class="section-eyebrow">Brief comparison to alternatives</div>
+    <h2>Why we passed on A and B.</h2>
+    <div class="compare-brief">
+
+      <div class="cb cb-a">
+        <h4>Option A: The $10K Race</h4>
+        <div class="cb-tag">Big-money headline competition</div>
+        <p style="font-size: 14px; color: var(--ink-soft);">First HappyTasker to 20 jobs in 30 days wins $10K. 40 spots, $49 entry.</p>
+
+        <div class="cb-row">
+          <div class="cb-side pros">
+            <h5>Pros</h5>
+            <ul>
+              <li>Big headline appeal</li>
+              <li>Naturally shareable</li>
+              <li>Built-in 44-day content arc</li>
+              <li>Lower operational lift</li>
+            </ul>
+          </div>
+          <div class="cb-side cons">
+            <h5>Cons</h5>
+            <ul>
+              <li>Up to $11,790 cash exposure</li>
+              <li>Rigging risk: fake hires, low-rate friend bookings, gameable rules</li>
+              <li>Attracts greed-driven signups</li>
+              <li>Doesn't help aspiring entrepreneurs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-verdict">
+          <strong>Why we passed:</strong> Bootstrap budget can't carry the worst-case cash exposure, and the rigging risk is real. We don't want to pay $10K to someone who got their friend to hire them 20 times.
+        </div>
+      </div>
+
+      <div class="cb cb-b">
+        <h4>Option B: Guarantee + Build-in-Public</h4>
+        <div class="cb-tag">Founder-backed promise + daily vlog</div>
+        <p style="font-size: 14px; color: var(--ink-soft);">Every paid signup gets a personal "First Booking in 14 days or refund + $100" guarantee.</p>
+
+        <div class="cb-row">
+          <div class="cb-side pros">
+            <h5>Pros</h5>
+            <ul>
+              <li>Strong trust signal</li>
+              <li>Builds founder brand</li>
+              <li>Drives real transactions during launch</li>
+              <li>Develops demand-gen muscle</li>
+            </ul>
+          </div>
+          <div class="cb-side cons">
+            <h5>Cons</h5>
+            <ul>
+              <li>~$5,585 net cost</li>
+              <li>$100 chaser invites loophole gaming (low availability, mismatched pricing)</li>
+              <li>40 first bookings to manufacture</li>
+              <li>Burnout risk for 2-person team</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-verdict">
+          <strong>Why we passed:</strong> The $100 cash chaser creates an arbitrage opportunity for the wrong kind of user, and the cash exposure is 10x higher than Option C without significantly better outcomes. Option C keeps the refund mechanic but removes the cash incentive to game it.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RISK MITIGATION -->
+  <section>
+    <div class="section-eyebrow">What could go wrong</div>
+    <h2>Risks and how we handle them.</h2>
+    <div class="risks-grid">
+
+      <div class="risk-card">
+        <h4>Risk: Content burnout</h4>
+        <p>14 days of daily founder content is a real ask. If we miss days, the algorithm punishes us hard and momentum stalls.</p>
+        <div class="mitigation">
+          <strong>Mitigation</strong>
+          Batch-record 2 weekends in advance. Bank 5+ vlogs before launch. Have a backup library of evergreen content (value bombs, funny bits) we can drop if a day goes sideways. Drop quality slightly before missing a day.
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <h4>Risk: Empty catalog problem</h4>
+        <p>40 paid HappyTaskers means some categories will have 1 to 2 providers, making search results look thin to early clients.</p>
+        <div class="mitigation">
+          <strong>Mitigation</strong>
+          ZIP-first graceful search architecture handles this. Clients see everyone offering services in their ZIP by default. If they filter to a specific service that isn't available in their ZIP, we show what other services ARE in that ZIP (we never show providers from other ZIPs since they don't actually serve there). If the ZIP has zero providers at all, we capture it as a demand signal and notify HappyTaskers in nearby ZIPs that there are missed jobs they could pick up by expanding their service area. During the 14-day launch we actively drive clients to HappyTaskers through targeted ZIP-specific outreach (Nextdoor posts, neighborhood-targeted ads, personal calls into HappyTaskers' service areas) to fulfill the First Booking Promise. Broader mass-market client acquisition campaigns scale up once supply density supports them (~Week 3+).
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <h4>Risk: Too many refund requests</h4>
+        <p>If we underdeliver on getting bookings, refunds spike beyond our 5-refund buffer.</p>
+        <div class="mitigation">
+          <strong>Mitigation</strong>
+          Active demand-gen during the launch period (we hustle bookings ourselves through targeted ads and outreach to clients in HappyTaskers' ZIP codes). Even 20 qualified refunds is only $980, still well below other options' exposure. Plus, many HappyTaskers will pass on the refund and stay to keep building.
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <h4>Risk: Wrong-fit signups still show up</h4>
+        <p>Open signup means we'll get some lazy/wrong-fit people through. They could create bad listings that pollute search.</p>
+        <div class="mitigation">
+          <strong>Mitigation</strong>
+          Platform mechanics handle this. Incomplete profiles don't rank in search. Bad-fit users self-eliminate within 14 days (no booking + no refund qualification = they just go inactive). Reviews and ratings push the great ones up. The wrong ones disappear from the user experience even if they technically exist.
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <h4>Risk: Viral content doesn't pop</h4>
+        <p>The algorithm is fickle. We could put up 85 pieces and have nothing go viral.</p>
+        <div class="mitigation">
+          <strong>Mitigation</strong>
+          Diversified content portfolio (5 franchises across 2 personas) means we're not betting on one format. Paid ads run regardless of organic performance. Re-engagement of 94 existing leads provides a floor of 8 to 15 signups independent of viral performance.
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <h4>Risk: Competitor legal pushback on comparison content</h4>
+        <p>If we name Thumbtack/TaskRabbit in fee comparison content, they could send cease-and-desist.</p>
+        <div class="mitigation">
+          <strong>Mitigation</strong>
+          Stick to factual public-record claims (published fee structures). Use opinion in founder voice, not brand voice. Have "the corporate platforms" generic language ready to swap in. Worst case is a C&D letter, which is manageable and gets us free press.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section>
+    <div class="next">
+      <div class="next-eyebrow">Commit to ship</div>
+      <h2>Five things to do this week to lock in Option C.</h2>
+      <ol class="next-list">
+        <li><strong>Re-engage the 94 existing warm leads</strong> tonight with the refreshed offer. 1 hour of work. Highest-leverage move in this entire plan. Likely 8 to 15 paid signups within 48 hours.</li>
+        <li><strong>Block Saturday and Sunday for batch recording.</strong> Set, props, outfits decided in advance. Goal: bank ~30 content pieces in two days.</li>
+        <li><strong>Configure the referral perks system</strong> in the platform: homepage spotlight slot mechanism, Vegas Connector badge logic, Founding Connector tier. Likely admin dashboard tweaks.</li>
+        <li><strong>Write the 14-day content calendar</strong> so every day has a planned post slotted in. No improvising mid-launch.</li>
+        <li><strong>Confirm ad accounts</strong> are ready (Meta, TikTok, Google), creative slots reserved, geo-targeting set to Clark County, ready to flip on Day 4 of launch.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span class="brand">HappyTask</span> &middot; The Open Entrepreneur Platform &middot; Vegas Launch GTM Plan &middot; For Zandr + partner
+  </footer>
+
+</div>
+</body>
+</html>
