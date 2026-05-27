@@ -884,6 +884,99 @@
     border-radius: 18px;
     box-shadow: 0 24px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
     overflow: hidden;
+    position: relative;
+  }
+  .day30-popover {
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    width: 340px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04);
+    z-index: 100;
+  }
+  .day30-popover::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    right: 56px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    transform: rotate(45deg);
+  }
+  .day30-popover-header {
+    background: var(--orange);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 13px 13px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .day30-popover-content {
+    padding: 18px 18px 16px 18px;
+  }
+  .day30-popover-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .day30-popover-content p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .day30-popover-choice {
+    color: var(--ink) !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px !important;
+  }
+  .day30-popover-thanks {
+    font-style: italic;
+    text-align: center;
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+    font-size: 12px !important;
+  }
+  .day30-btn {
+    width: 100%;
+    border: none;
+    padding: 11px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+    font-family: inherit;
+  }
+  .day30-btn:last-of-type { margin-bottom: 0; }
+  .day30-btn.primary {
+    background: var(--orange);
+    color: #fff;
+  }
+  .day30-btn.primary:hover { background: var(--orange-deep); }
+  .day30-btn.secondary {
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+  }
+  .day30-btn.secondary:hover {
+    background: var(--bg);
+    color: var(--ink);
   }
   .dash-nav {
     display: flex;
@@ -2273,31 +2366,105 @@
       <p>Instead, the dashboard stays focused on success metrics (profile views, bookings, calendar fills, schedule). The 30-Day Money Back Guarantee is real and the policy is accessible in account settings if they want to check, but it doesn't dominate the daily experience. We trust the user with the information (we explained it 3 times during onboarding) and let them focus on building.</p>
     </div>
 
-    <div class="expect-wrap">
-      <p class="expect-caption">The single Day 30 notification that fires only if a HappyTasker hasn't been hired by Day 30</p>
-      <div class="expect-screen">
-        <div class="expect-screen-header">HappyTask</div>
-        <div class="expect-screen-body">
-          <div class="expect-screen-title">Day 30. We didn't deliver.</div>
-          <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 16px;">You met the requirements. You stayed available. But we weren't able to get you booked in 30 days. That's on us, not on you.</p>
-          <p style="font-size: 14px; color: var(--ink); font-weight: 600; margin-bottom: 14px;">Two paths forward. Your choice:</p>
-          <button class="checker-btn primary">Claim my $49 back and exit</button>
-          <button class="checker-btn secondary">Pass on the refund and keep building</button>
-          <p style="font-size: 13px; color: var(--ink-soft); text-align: center; margin-top: 16px; font-style: italic;">Either way, thank you for giving us a shot.</p>
+    <div class="dashboard-mockup-wrap">
+      <p class="dashboard-mockup-caption">Mockup of the HappyTasker dashboard with the Day 30 notification appearing from the bell icon (only triggers if a HappyTasker hasn't been hired by Day 30)</p>
+
+      <div class="dash-mock">
+        <!-- Top nav -->
+        <div class="dash-nav">
+          <div class="dash-logo">
+            <span class="dash-logo-mark"></span>
+            <span><span class="happy">Happy</span><span class="task">Task</span></span>
+          </div>
+          <div class="dash-nav-items">
+            <span class="dash-nav-item active">Today</span>
+            <span class="dash-nav-item">Inbox</span>
+            <span class="dash-nav-item">Tasks</span>
+            <span class="dash-nav-item">Tools</span>
+          </div>
+          <div class="dash-nav-right">
+            <span class="dash-nav-bell">&#128276;</span>
+            <span class="dash-nav-avatar"></span>
+          </div>
+        </div>
+
+        <!-- Content (no widget, dashboard stays clean) -->
+        <div class="dash-content">
+          <!-- Business / Classroom toggle -->
+          <div class="dash-toggle">
+            <span class="dash-toggle-item active">Business</span>
+            <span class="dash-toggle-item inactive">Classroom</span>
+          </div>
+
+          <!-- Live banner -->
+          <div class="dash-live-banner">
+            <span class="dash-live-check">&#10003;</span>
+            <div class="dash-live-text">
+              <strong>Your business is live on HappyTask.</strong>
+              <span class="sub">Clients can find and book you in the search results.</span>
+            </div>
+          </div>
+
+          <!-- Today hero -->
+          <div class="dash-today">
+            <h3>Today</h3>
+            <div class="dash-today-date">Monday, June 23</div>
+            <div class="dash-today-greeting">Hey, Julia! Here's what your day looks like.</div>
+            <div class="dash-today-avail">
+              <div class="dash-today-avail-label">&#128197; Available for hire today</div>
+              <div class="dash-today-avail-time">
+                <span>5:00 AM &ndash; 5:00 PM</span>
+                <span class="open-tag">OPEN</span>
+              </div>
+              <div class="dash-today-avail-btn">&#8645; Fine-tune availability</div>
+            </div>
+          </div>
+
+          <!-- Business stats (no widget between hero and stats anymore) -->
+          <div class="dash-stats">
+            <div>
+              <div class="dash-stats-label">YOUR BUSINESS LINK</div>
+              <div class="dash-stats-link">happytask.com/juliaw &#9662;</div>
+            </div>
+            <div class="dash-stats-numbers">
+              <div class="dash-stats-num-block">
+                <div class="dash-stats-num">0</div>
+                <div class="dash-stats-num-label">VIEWS</div>
+              </div>
+              <div class="dash-stats-num-block">
+                <div class="dash-stats-num">0</div>
+                <div class="dash-stats-num-label">HIRES</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 30 notification popover (anchored to bell) -->
+        <div class="day30-popover">
+          <div class="day30-popover-header">&#128276; Notification</div>
+          <div class="day30-popover-content">
+            <div class="day30-popover-title">Day 30. We didn't deliver.</div>
+            <p>You met the requirements. You stayed available. But we weren't able to get you booked in 30 days. That's on us, not on you.</p>
+            <p class="day30-popover-choice">Two paths forward. Your choice:</p>
+            <button class="day30-btn primary">Claim my $49 back and exit</button>
+            <button class="day30-btn secondary">Pass on the refund and keep building</button>
+            <p class="day30-popover-thanks">Either way, thank you for giving us a shot.</p>
+          </div>
         </div>
       </div>
 
-      <div class="expect-reasoning">
-        <div class="expect-reasoning-header">Why this is the right approach</div>
-        <p class="expect-reasoning-sub">Day 30 should be a single meaningful decision moment, not the climax of a 30-day countdown. The notification fires only if they're unhired. If they were hired during the window (the goal), the notification never appears. They just keep using the platform like normal.</p>
+      <div class="dashboard-reasoning">
+        <div class="dashboard-reasoning-header">Why this is the right approach</div>
+        <p class="dashboard-reasoning-sub">Day 30 should be a single meaningful decision moment, not the climax of a 30-day countdown. The notification appears from the standard bell icon (where every other in-app notification lives), so it feels native to the platform. The dashboard underneath stays unchanged - no countdown widget cluttering their daily experience.</p>
         <ul>
           <li><strong>We already communicated it 3 times.</strong> Tier card, Eligibility Checker, post-purchase Welcome Screen. They know the policy. We don't need to remind them daily.</li>
           <li><strong>Countdown psychology is wrong for our outcome.</strong> Countdowns build anticipation of an EVENT. We want them building their business, not anticipating a refund moment. A dashboard countdown teaches the wrong behavior.</li>
           <li><strong>Premium products don't surface return-window timers.</strong> Apple, Tesla, premium SaaS - none show "X days left to return." That undercuts confidence in the product and screams amateur hour.</li>
-          <li><strong>Focus their attention on success metrics.</strong> The dashboard already shows views, bookings, profile health. Things they can ACT on. Adding a refund countdown would compete for attention with the things that actually matter.</li>
+          <li><strong>Notifications live where notifications live.</strong> The bell is the natural home for time-sensitive messages. Users already know to check it. We don't invent a new UI pattern just for this one message.</li>
           <li><strong>Single decision moment, not 30 days of clock-watching.</strong> One notification on Day 30, two clear paths. Clean, dignified, no anxiety leading up to it.</li>
           <li><strong>The policy is still accessible.</strong> Account settings has the full Guarantee details and their personal status (start date, days remaining). Available if they look for it, but not surfaced unless they do.</li>
           <li><strong>Frames the failure correctly.</strong> "We didn't deliver" puts the responsibility on US, not on them. "That's on us, not on you" removes shame. Important for keeping trust and brand even when refunding.</li>
+          <li><strong>If they get hired, the notification never appears.</strong> Day 30 only triggers for the unhired. Successful HappyTaskers experience nothing unusual - the system stays out of their way.</li>
         </ul>
       </div>
     </div>
