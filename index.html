@@ -476,6 +476,29 @@
     padding-top: 10px;
     border-top: 1px dashed rgba(247, 136, 12, 0.15);
   }
+  .tier-guarantee-flat {
+    padding: 14px 16px;
+  }
+  .tier-guarantee-flat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--orange-deep);
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+  .tier-guarantee-flat-body {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .tier-guarantee-flat-body strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
 
   /* Checklist (refund qualification) */
   .checklist-card {
@@ -1844,20 +1867,15 @@
         <div class="tier-name">HappyTasker</div>
         <div class="tier-price">$49 <small>one time</small></div>
         <div class="tier-tagline">For people who want clients sent to them and a better shot at growing through the platform.</div>
-        <details class="tier-guarantee">
-          <summary>
-            <span class="tier-guarantee-icon">✓</span>
-            <span>Backed by the First Booking Promise</span>
-          </summary>
-          <div class="tier-guarantee-content">
-            <p class="tier-guarantee-promise">If we don't get you booked within 14 days of your team approval, your $49 is refunded. Two conditions:</p>
-            <ul class="tier-guarantee-list">
-              <li>Get your profile team-approved</li>
-              <li>Keep your 10+ hour weekly availability live for the full 14 days after approval</li>
-            </ul>
-            <p class="tier-guarantee-note">Take the refund and leave, or pass on it and stay on the platform to keep building. Your call.</p>
+        <div class="tier-guarantee">
+          <div class="tier-guarantee-flat">
+            <div class="tier-guarantee-flat-header">
+              <span class="tier-guarantee-icon">✓</span>
+              <span>30-Day Money Back Guarantee</span>
+            </div>
+            <p class="tier-guarantee-flat-body">Get team-approved. If we don't get you hired within 30 days, your $49 is refundable. <strong>No conditions. No questions.</strong></p>
           </div>
-        </details>
+        </div>
         <ul class="tier-features">
           <li class="yes">All HappyTask tools <span class="value-note">~$115/mo value</span></li>
           <li class="yes">Your own website with your services <span class="value-note">~$20/mo value</span></li>
