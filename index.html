@@ -771,6 +771,100 @@
     font-weight: 700;
   }
 
+  /* Eligibility Checker mockup */
+  .checker-intro {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    line-height: 1.55;
+  }
+  .checker-list {
+    list-style: none;
+    margin-bottom: 14px;
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 4px 12px;
+  }
+  .checker-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    font-size: 13px;
+  }
+  .checker-item + .checker-item {
+    border-top: 1px dashed rgba(0,0,0,0.06);
+  }
+  .checker-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .checker-item.met .checker-icon {
+    background: var(--green-soft);
+    color: var(--green-deep);
+  }
+  .checker-item.missing .checker-icon {
+    background: rgba(0,0,0,0.05);
+    color: var(--gray);
+    font-size: 16px;
+  }
+  .checker-item.met .checker-text {
+    color: var(--ink-soft);
+  }
+  .checker-item.missing .checker-text {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .checker-status {
+    background: var(--orange-soft);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .checker-status strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  .checker-btn {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    font-family: inherit;
+  }
+  .checker-btn:last-child { margin-bottom: 0; }
+  .checker-btn.primary {
+    background: var(--orange);
+    color: #fff;
+  }
+  .checker-btn.primary:hover { background: var(--orange-deep); }
+  .checker-btn.secondary {
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+  }
+  .checker-btn.secondary:hover {
+    background: var(--bg);
+    color: var(--ink);
+  }
+
   /* Dashboard widget mockup */
   .dashboard-mockup-wrap {
     margin-top: 18px;
@@ -1992,7 +2086,7 @@
     <h2>Get your marketing page team-approved. If we don't get you hired within 30 days of approval, your $49 is refundable.</h2>
     <div class="checklist-card">
       <h3>To qualify for the refund, the HappyTasker must complete ALL 6 below AND have their profile team-approved:</h3>
-      <p class="sub">The 30-day booking window starts the moment their profile is team-approved, not the day they sign up. That's intentional. It gives our team and their search visibility a full, fair shot at landing them a booking, instead of burning days waiting on them to finish their profile. This is the same bar that gives them a real shot at getting hired. We're not making it harder than necessary. We're making it real.</p>
+      <p class="sub">The 30-day booking window starts the moment their profile is team-approved, not the day they sign up. That gives our team and their search visibility a full, fair shot at landing them a booking, instead of burning days waiting on them to finish their profile.<br><br><strong>Important distinction:</strong> the 6 below are requirements for the 30-Day Money Back Guarantee, not for team approval itself. Team approval has a lower bar (real profile pic, written About Me, content that matches the service). Someone can be team-approved and live in search without meeting all 6 below, they just won't qualify for the guarantee. This keeps the platform open to flexible workers (someone available 5 hrs/week, someone serving just 1 zip) while the guarantee retains its integrity for those who meet the full bar.</p>
       <ul class="checklist">
         <li><strong>Profile picture</strong> (real, professional, not a blurry selfie)</li>
         <li><strong>About Me section</strong> filled out with their skills/service preferences/background story</li>
@@ -2058,6 +2152,70 @@
           <li><strong>Shifts mindset from "I bought access" to "I'm starting a 30-day sprint."</strong> Pay alone doesn't create commitment. A clear timeline does. Tasks framed as "your next 30 days" are way more activating than "your account is ready."</li>
           <li><strong>Makes the Day 7 deadline land as fair.</strong> By tying it to the operational logic ("we need at least 7 days to drive bookings your way") instead of presenting it as an arbitrary rule, it reads as us being honest about what makes the platform work.</li>
           <li><strong>Reduces purchase regret.</strong> "No questions, no friction. Walk away with our blessing" telegraphs integrity right after they spent $49. This single line probably saves us 10 to 20 percent of cancellation pressure in the first 24 hours.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY CHECKER MOCKUP -->
+  <section>
+    <div class="section-eyebrow">How the 6 get auto-enforced post-payment</div>
+    <h2>The Eligibility Checker. Pre-review screen, no coach back-and-forth.</h2>
+    <div class="expect-wrap">
+      <p class="expect-caption">Mockup of the Eligibility Checker shown to HappyTaskers after payment + background check, before team review</p>
+      <div class="expect-screen">
+        <div class="expect-screen-header">HappyTask</div>
+        <div class="expect-screen-body">
+          <div class="expect-screen-title">One last step before team review.</div>
+          <p class="checker-intro">Here's where your profile stands for the 30-Day Money Back Guarantee:</p>
+
+          <ul class="checker-list">
+            <li class="checker-item met">
+              <span class="checker-icon">&#10003;</span>
+              <span class="checker-text">Profile picture</span>
+            </li>
+            <li class="checker-item met">
+              <span class="checker-icon">&#10003;</span>
+              <span class="checker-text">About Me (243 words)</span>
+            </li>
+            <li class="checker-item met">
+              <span class="checker-icon">&#10003;</span>
+              <span class="checker-text">Content (3 photos uploaded)</span>
+            </li>
+            <li class="checker-item missing">
+              <span class="checker-icon">&#9711;</span>
+              <span class="checker-text">Availability: 4 hrs/wk set (need 10+)</span>
+            </li>
+            <li class="checker-item missing">
+              <span class="checker-icon">&#9711;</span>
+              <span class="checker-text">Service area: 1 zip selected (need 3+)</span>
+            </li>
+            <li class="checker-item met">
+              <span class="checker-icon">&#10003;</span>
+              <span class="checker-text">Background check complete</span>
+            </li>
+          </ul>
+
+          <div class="checker-status">
+            <strong>4 of 6 met.</strong>
+            If you submit as-is, you'll be live in search but won't qualify for the 30-Day Money Back Guarantee.
+          </div>
+
+          <button class="checker-btn primary">Edit profile to qualify for guarantee</button>
+          <button class="checker-btn secondary">Submit for team review as-is</button>
+        </div>
+      </div>
+
+      <div class="expect-reasoning">
+        <div class="expect-reasoning-header">Why this screen exists, and where it lives in the flow</div>
+        <p class="expect-reasoning-sub">The 6 requirements are for the Money Back Guarantee, not for team approval. So they can't be enforced during the shared profile builder (which both SoloTaskers and HappyTaskers use before tier selection). The Eligibility Checker is a HappyTasker-only screen that triggers AFTER payment and background check, BEFORE team review. It auto-scans the profile, shows the user where they stand, and lets them choose to enhance or proceed.</p>
+        <ul>
+          <li><strong>Triggers at the right moment in the flow.</strong> Post-payment, post-background-check, pre-team-review. The natural pause point where the system can ask: "before we send this to coaches, want to maximize for the guarantee?"</li>
+          <li><strong>Hidden from SoloTaskers and pre-payment HappyTasker prospects.</strong> The profile builder stays clean and tier-agnostic. The guarantee checker only appears for people who paid for it. No confusion, no spillover messaging.</li>
+          <li><strong>Two clear paths, no hidden cost.</strong> "Edit profile to qualify" takes them back to the profile builder with the specific missing items highlighted. "Submit as-is" sends them straight to team review without the guarantee. Both are valid choices, neither is treated as wrong.</li>
+          <li><strong>Auto-enforces with no coach intervention.</strong> The system tracks the 6 against the user's actual profile data. Coaches review for quality (is the photo professional, does the About Me read well) not for requirement-counting. Higher-leverage use of coach time, faster reviews, fewer revision cycles.</li>
+          <li><strong>Reduces revision cycles to one.</strong> Users self-correct before submission. Team review becomes a final quality pass, not a back-and-forth on missing items. Less work for the team, less waiting for the HappyTasker.</li>
+          <li><strong>Respects flexible workers.</strong> Someone who genuinely only has 5 hrs/week can still get on the platform via "Submit as-is" and use the platform without the guarantee. No one is locked out for not having maximum availability or wide zip coverage.</li>
         </ul>
       </div>
     </div>
