@@ -499,6 +499,74 @@
     color: var(--ink);
     font-weight: 700;
   }
+  .tier-features li details.tools-inline {
+    display: block;
+    margin: 0;
+  }
+  .tier-features li details.tools-inline > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    user-select: none;
+    color: var(--ink-soft);
+    font-size: 14px;
+    transition: color 0.15s ease;
+  }
+  .tier-features li details.tools-inline > summary::-webkit-details-marker {
+    display: none;
+  }
+  .tier-features li details.tools-inline > summary::after {
+    content: "▾";
+    font-size: 10px;
+    color: var(--gray);
+    transition: transform 0.2s ease;
+    display: inline-block;
+    margin-left: 8px;
+    flex-shrink: 0;
+  }
+  .tier-features li details.tools-inline[open] > summary::after {
+    transform: rotate(180deg);
+  }
+  .tier-features li details.tools-inline > summary:hover {
+    color: var(--ink);
+  }
+  .tier-features li details.tools-inline > summary .summary-text {
+    flex: 1;
+  }
+  .tier-features li .inline-tools-list {
+    list-style: none;
+    margin-top: 12px;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .tier-features li .inline-tools-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+    border-top: 0;
+    gap: 12px;
+    position: static;
+  }
+  .tier-features li .inline-tools-list li:last-child {
+    border-bottom: 0;
+  }
+  .tier-features li .inline-tools-list li::before {
+    display: none;
+  }
+  .tier-features li .inline-tools-list li span:last-child {
+    color: var(--gray);
+    font-weight: 500;
+    white-space: nowrap;
+    font-size: 12px;
+  }
 
   /* Checklist (refund qualification) */
   .checklist-card {
@@ -1856,7 +1924,20 @@
         <div class="tier-price">Free</div>
         <div class="tier-tagline">For independent people who already have their own clients and want to use our tools to run more professionally.</div>
         <ul class="tier-features">
-          <li class="yes">All HappyTask tools</li>
+          <li class="yes">
+            <details class="tools-inline">
+              <summary><span class="summary-text">All HappyTask tools</span></summary>
+              <ul class="inline-tools-list">
+                <li><span>CRM for client base building</span><span>~$25/mo</span></li>
+                <li><span>Custom scheduling &amp; availability</span><span>~$15/mo</span></li>
+                <li><span>Automated invoicing &amp; payments</span><span>~$20/mo</span></li>
+                <li><span>In-platform client messaging</span><span>~$10/mo</span></li>
+                <li><span>Website view tracking</span><span>~$15/mo</span></li>
+                <li><span>Classroom: pricing &amp; follow-up lessons</span><span>~$30/mo</span></li>
+                <li><span>ZIP code targeting &amp; self-set rates</span><span>included</span></li>
+              </ul>
+            </details>
+          </li>
           <li class="yes">Your own website with your services</li>
           <li class="no">Not listed in HappyTask search results</li>
           <li class="no">No background check</li>
@@ -1877,24 +1958,25 @@
           </div>
         </div>
         <ul class="tier-features">
-          <li class="yes">All HappyTask tools <span class="value-note">~$115/mo value</span></li>
+          <li class="yes">
+            <details class="tools-inline">
+              <summary><span class="summary-text">All HappyTask tools <span class="value-note">~$115/mo value</span></span></summary>
+              <ul class="inline-tools-list">
+                <li><span>CRM for client base building</span><span>~$25/mo</span></li>
+                <li><span>Custom scheduling &amp; availability</span><span>~$15/mo</span></li>
+                <li><span>Automated invoicing &amp; payments</span><span>~$20/mo</span></li>
+                <li><span>In-platform client messaging</span><span>~$10/mo</span></li>
+                <li><span>Website view tracking</span><span>~$15/mo</span></li>
+                <li><span>Classroom: pricing &amp; follow-up lessons</span><span>~$30/mo</span></li>
+                <li><span>ZIP code targeting &amp; self-set rates</span><span>included</span></li>
+              </ul>
+            </details>
+          </li>
           <li class="yes">Your own website with your services <span class="value-note">~$20/mo value</span></li>
           <li class="yes">Listed in HappyTask search results</li>
           <li class="yes">Background check <span class="value-note">$45 value</span></li>
           <li class="yes">HappyTask Starter Kit (shirt, hat, more) <span class="value-note">$40 value</span></li>
         </ul>
-        <details class="tools-detail">
-          <summary>What's inside HappyTask tools</summary>
-          <ul class="tools-detail-list">
-            <li><span>CRM for client base building</span><span>~$25/mo</span></li>
-            <li><span>Custom scheduling &amp; availability</span><span>~$15/mo</span></li>
-            <li><span>Automated invoicing &amp; payments</span><span>~$20/mo</span></li>
-            <li><span>In-platform client messaging</span><span>~$10/mo</span></li>
-            <li><span>Website view tracking</span><span>~$15/mo</span></li>
-            <li><span>Classroom: pricing &amp; follow-up lessons</span><span>~$30/mo</span></li>
-            <li><span>ZIP code targeting &amp; self-set rates</span><span>included</span></li>
-          </ul>
-        </details>
       </div>
     </div>
   </section>
