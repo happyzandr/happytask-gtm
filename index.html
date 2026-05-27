@@ -40,6 +40,44 @@
   /* Section spacing */
   section { margin-bottom: 32px; }
 
+  /* NEW marker for sections that changed or were added */
+  section.new-marker-section {
+    position: relative;
+  }
+  section.new-marker-section::before {
+    content: "NEW";
+    position: absolute;
+    left: -110px;
+    top: 8px;
+    color: var(--green-deep);
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    background: var(--green-soft);
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 2px solid var(--green);
+    white-space: nowrap;
+    z-index: 5;
+    line-height: 1;
+  }
+  @media (max-width: 1320px) {
+    section.new-marker-section::before {
+      left: -90px;
+      font-size: 24px;
+      padding: 6px 12px;
+    }
+  }
+  @media (max-width: 1180px) {
+    section.new-marker-section::before {
+      position: static;
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 18px;
+      padding: 5px 11px;
+    }
+  }
+
   /* Hero */
   header.hero {
     background: linear-gradient(135deg, #1A1A1A 0%, #2A1A0A 100%);
@@ -2107,7 +2145,7 @@
   </section>
 
   <!-- THE OFFER ARCHITECTURE -->
-  <section>
+  <section class="new-marker-section">
     <div class="section-eyebrow">The offer</div>
     <h2>Two ways to join. Both stay open. Zero gatekeeping.</h2>
     <div class="tier-grid">
@@ -2174,7 +2212,7 @@
   </section>
 
   <!-- ELIGIBILITY CHECKER MOCKUP -->
-  <section>
+  <section class="new-marker-section">
     <div class="section-eyebrow">How the 5 get auto-enforced post-payment</div>
     <h2>The Eligibility Checker. Pre-review screen, no coach back-and-forth.</h2>
     <div class="expect-wrap">
@@ -2235,7 +2273,7 @@
   </section>
 
   <!-- HOW USERS LEARN WHAT GOOD LOOKS LIKE -->
-  <section>
+  <section class="new-marker-section">
     <div class="section-eyebrow">How users learn what "good" looks like</div>
     <h2>Examples and inline tips in the profile builder itself.</h2>
     <div class="card" style="margin-bottom: 16px;">
@@ -2281,7 +2319,7 @@
   </section>
 
   <!-- DURING THE 30-DAY WINDOW -->
-  <section>
+  <section class="new-marker-section">
     <div class="section-eyebrow">During the 30-day window</div>
     <h2>No countdown widget. Their dashboard stays focused on their business.</h2>
 
